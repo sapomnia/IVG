@@ -3,11 +3,11 @@ import requests
 import time
 
 # Carica il file CSV con tab come separatore
-file_path = '/Users/riccardosaporiti/Documents/Dataset Wired/IVG_arricchito.csv'
+file_path = 'PATH/TO/THE/FILE/IVG_arricchito.csv'
 df = pd.read_csv(file_path, sep='\t', encoding='utf-8')
 
 # Imposta la tua API key di HERE Maps
-api_key = 'VLyFkWDERonC4CBwzHN-etuW3bct2sSsbgGv-5E3LAk'
+api_key = 'YOUR_API_KEY'
 
 # Funzione per geocodificare un singolo indirizzo
 def geocode_address(address):
@@ -40,7 +40,7 @@ df['Latitudine'] = latitudes
 df['Longitudine'] = longitudes
 
 # Salva il risultato
-output_path = '/Users/riccardosaporiti/Documents/Dataset Wired/IGV_geocoded.csv'
+output_path = 'PATH/TO/YOUR/GEOCODED/FILE/IGV_geocoded.csv'
 df.to_csv(output_path, index=False)
 
 print(f"File salvato in: {output_path}")
